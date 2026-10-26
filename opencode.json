@@ -1,0 +1,43 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "*git add*": "deny",
+      "*git commit*": "deny",
+      "*git push*": "deny",
+      "*git pull*": "deny",
+      "*git fetch*": "deny",
+      "*git reset*": "deny",
+      "*git checkout*": "deny",
+      "*git switch*": "deny",
+      "*git restore*": "deny",
+      "*git rebase*": "deny",
+      "*git merge*": "deny",
+      "*git cherry-pick*": "deny",
+      "*git revert*": "deny",
+      "*git stash*": "deny",
+      "*git clean*": "deny",
+      "*git rm *": "deny",
+      "*git tag*": "deny",
+      "*git branch -*": "deny",
+      "*git worktree*": "deny",
+      "*git config*": "deny",
+      "gh *": "deny",
+      "*&& gh *": "deny",
+      "*; gh *": "deny",
+      "*rm -rf /*": "deny",
+      "*rm -rf ~*": "deny",
+      "*rm -rf ..*": "deny",
+      "*rm -rf *:*": "deny",
+      "*| sh*": "deny",
+      "*| bash*": "deny",
+      "*npm publish*": "deny",
+      "*pnpm publish*": "deny",
+      "*orca worktree*": "deny",
+      "*orca terminal*": "deny",
+      "*orca orchestration dispatch*": "deny",
+      "*orca orchestration task-create*": "deny"
+    }
+  }
+}
