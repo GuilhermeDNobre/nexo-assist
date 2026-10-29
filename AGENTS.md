@@ -35,9 +35,18 @@ functions in `src/modules/service-desk-rules`, never in prompts.
 
 All rules in `.claude/rules/` apply (see `.claude/rules/README.md`).
 
-No dependency manifest exists yet, so there is **no runnable build, lint or test command until the
-scaffold task lands**; that task records them here. Never report a validation as passing when its
-command does not exist.
+## Commands
+
+- `pnpm install`
+- `pnpm dev`, `pnpm build`, `pnpm start`
+- `pnpm lint`, `pnpm typecheck`
+- `pnpm test` (Vitest projects `unit` and `integration`), `pnpm test:e2e` (Playwright)
+- `docker compose up -d`, `pnpm db:generate`, `pnpm db:migrate`, `pnpm db:seed`
+- `pnpm eval` and `pnpm usage:report` (scripts land with tasks 9.0 and 10.0)
+
+Integration tests and Playwright use `DATABASE_URL_TEST` and serialize through the
+`.locks/db-test` directory lock. Never report a validation as passing when its command does not
+exist.
 
 Design decisions and their rejected alternatives belong in `docs/adr/`, and the domain glossary in
 `CONTEXT.md`, once they exist. Read both before planning or implementing: they explain why the
