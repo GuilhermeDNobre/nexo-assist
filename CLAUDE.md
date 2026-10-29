@@ -104,7 +104,7 @@ readiness check and the tool notes above change.
 orca orchestration run-create --objective "<objective>" --json
 
 # 1. Worktree - only when parallelizing (section 3); otherwise use the current one
-orca worktree create --name <task-slug> --no-parent --json
+orca worktree create --name <task-slug> --base-branch origin/develop --no-parent --json
 #    copy the full result.worktree.id: <repoId>::<path>
 
 # 2. Agent terminal, with the launch command from the recipe above
@@ -145,8 +145,10 @@ rely on it, and do not leave a worker running unwatched:
 
 ### Worktrees
 
-- A new Orca worktree branches from `origin/main`: **push** what the worker needs before
-  dispatching, or it will not be there.
+- Development happens on `develop` (user's choice, 2026-10-29). Create every worker worktree with
+  `--base-branch origin/develop`; without it Orca branches from `origin/main`. **Push** `develop`
+  with what the worker needs before dispatching, or it will not be there.
+- Reviewed work is integrated into `develop`. `main` only moves when the user asks.
 - `orca worktree rm` deletes the local branch. Note its SHA, and commit reviewed work first.
 - From Git Bash, prefix `MSYS_NO_PATHCONV=1` when sending slash-prefixed text or POSIX paths, or
   they get rewritten into `C:/Program Files/Git/...`.
