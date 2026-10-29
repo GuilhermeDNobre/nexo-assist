@@ -53,7 +53,7 @@ Referências: `Desafio_Tecnico_Nexo_Assist_PRD_v5.pdf` (Anexos A e B) e o protó
 - **RF09** **Seleção de chamado:** com vários candidatos, o agent lista os chamados do funcionário para ele escolher.
 - **RF10** **Rascunho:** antes de criar ou atualizar, o agent mostra título, descrição, categoria, prioridade com prazo calculado ("resposta até 13:43") e afetados, com as ações Confirmar, Editar e Cancelar.
 - **RF11** **Opções rápidas:** perguntas com botões de resposta (ex.: "Só eu / Minha equipe / Toda a empresa / Não sei"); texto livre também é aceito.
-- **RF12** **Limite de 30 mensagens do funcionário por sessão**, com contador visível ("18/30"). A sessão é o dia: o contador zera no dia seguinte e o histórico permanece. No limite, o envio é bloqueado com explicação e a opção de falar com um analista.
+- **RF12** **Limite de 30 mensagens do funcionário ao agent por sessão**, com contador visível ("18/30"). A sessão é o dia: o contador zera no dia seguinte e o histórico permanece. No limite, o envio ao agent é bloqueado com explicação e a opção de falar com um analista. Pedir analista e conversar com ele não contam no limite.
 - **RF13** Com a conversa transferida ou com um analista, o chat mostra esse estado e identifica as mensagens do analista por nome e nível.
 - **RF14** Falhas aparecem como mensagem amigável com opção de tentar de novo, sem perder o texto digitado.
 
@@ -93,7 +93,7 @@ Referências: `Desafio_Tecnico_Nexo_Assist_PRD_v5.pdf` (Anexos A e B) e o protó
 
 ### F5. Transferência para analista
 
-- **RF32** A conversa fica **aguardando atendente**, com motivo (pedido, crítico, vencido ou baixa confiança com o percentual) e prazo de espera.
+- **RF32** A conversa fica **aguardando atendente**, com motivo (pedido, crítico, vencido ou baixa confiança com o percentual), nível de destino (Suporte N2 para chamado crítico ou vencido, N1 nos demais) e prazo de espera igual ao prazo da prioridade do chamado (Alta quando não há chamado).
 - **RF33** A transferência leva um **resumo do caso**: problema, o que já foi tentado, chamados relacionados e motivo.
 - **RF34** A conversa entra imediatamente na fila do console.
 
